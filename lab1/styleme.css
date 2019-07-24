@@ -1,0 +1,26 @@
+body{
+    background-color:#ebebeb;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+b{
+    color:#ef6b0a;
+}
+ul > li{
+    color:#442bff;
+}
+h1{
+    font-style: italic;
+}
+.emotion{
+    height:200px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+p::first-letter {
+    font-size: 1.5em;
+}
