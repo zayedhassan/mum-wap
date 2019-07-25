@@ -93,7 +93,6 @@ body {
 }
 
 .review p:first-child {
-    /* the quote itself */
     border: 2px solid gray;
     background-color: #E8DC9B;
     border-radius: 10px;
@@ -120,7 +119,6 @@ body {
 
 #validators {
     opacity: 0.5;
-    float: right;
     position: fixed;
     bottom: 0px;
     right: 0px;
