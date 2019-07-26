@@ -1,13 +1,16 @@
+//myFunctionTest implemented as described
 function myFunctionTest(exprected, get) {
     if (exprected == get()) return 'TEST SUCCEEDED';
     else return 'TEST FAILED. Expected ' + exprected + ' found ' + get();
 }
 
+//finding the max value
 function max(a, b) {
     if (a > b) return a;
     else return b;
 }
 
+//finding the max of three number
 function maxOfThree(a, b, c) {
     let max = a;
     if (max < b) max = b;
@@ -15,10 +18,12 @@ function maxOfThree(a, b, c) {
     return max;
 }
 
+//funding the vowel
 function isVowel(v) {
     return ['a', 'e', 'i', 'o', 'u'].indexOf(v.toLowerCase()) !== -1
 }
 
+//adding all element of an array
 function sum(array) {
     let total = 0;
     for (var i = 0; i < array.length; i++) {
@@ -27,6 +32,7 @@ function sum(array) {
     return total;
 }
 
+//multiplying all element of an array
 function multiply(array) {
     let total = 1;
     for (var i = 0; i < array.length; i++) {
@@ -35,6 +41,7 @@ function multiply(array) {
     return total;
 }
 
+//reversing a string
 function reverse(str) {
     let reversed = "";
     for (var i = str.length - 1; i >= 0; i--) {
@@ -43,6 +50,7 @@ function reverse(str) {
     return reversed;
 }
 
+//find the larged word in an array
 function findLongestWord(array) {
     let len = 0;
     for (var i = 0; i < array.length; i++) {
@@ -52,6 +60,7 @@ function findLongestWord(array) {
     return len;
 }
 
+//filter words by a specific length
 function filterLongWords(array, len) {
     for (var i = 0; i < array.length; i++) {
         if (array[i].length <= len) array.splice(0, 1);
@@ -60,6 +69,7 @@ function filterLongWords(array, len) {
     return array;
 }
 
+//using map to change all element of an array
 function map(a) {
 
     return a.map(function (elem, i, array) {
@@ -68,18 +78,22 @@ function map(a) {
 
 }
 
+//using filter to filter through an array
 function filter(a) {
     return a.filter(function (elem, i, array) {
         return elem == 3;
     });
 }
 
+//using reduce to add all element of an array
 function reduce(a) {
     return a.reduce(function (prevValue, elem, i, array) {
         return prevValue + elem;
     });
 }
 
+
+//testing all the function above
 console.log("Expected output of max(20,10) is 20 and  " + myFunctionTest(20, function () {
     return max(20, 10);
 }));
