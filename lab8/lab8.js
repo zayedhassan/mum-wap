@@ -1,3 +1,4 @@
+//Using String Object to make filter
 String.prototype.filter = function (array) {
     let str;
     for (let i = 0; i < array.length; i++) {
@@ -7,6 +8,7 @@ String.prototype.filter = function (array) {
 };
 console.log("This house is not nice!".filter(['not']));
 
+//Using Array Object to make bubbleSort
 Array.prototype.bubbleSort = function () {
     let array = this;
     let len = array.length;
@@ -23,13 +25,13 @@ Array.prototype.bubbleSort = function () {
 }
 console.log([6, 4, 0, 3, -2, 1].bubbleSort());
 
-
+//problem 3a
 function Person() {
     this.name = "john";
     this.age = 23;
     this.species = "homo sapien";
-
 }
+
 Person.prototype.favoriteHobby = function (hobby) {
     return "My name is " + this.name + " and my hobby is " + hobby;
 }
@@ -49,8 +51,9 @@ const t1 = new Teacher("physics");
 
 console.log(t.teach());
 console.log(t1.teach());
+//3a finished
 
-
+//3b start
 const Person1 = {
     name: "bob",
     age: 23,
@@ -75,7 +78,9 @@ let t2 = Object.create(Teacher1);
 
 console.log(p2.favoriteHobby());
 console.log(t2.teach());
+//3b finished
 
+//3c start
 class Person2 {
     constructor(name, age, species) {
         this.name = name;
@@ -101,26 +106,26 @@ class Teacher2 {
 let t3 = new Teacher2(p3.name, 'Art');
 
 console.log(t3.teach());
+//3c finished
 
-
-
-class Person4{
-    constructor(name,age){
+//Problme 4 (ES6 class syntax)
+class Person4 {
+    constructor(name, age) {
         this.name = name;
         this.age = age;
     }
     greeting() {
         return "Greetings, my name is " + this.name + " and I am " + this.age + " years old."
     }
-    salute () {
+    salute() {
         return "Good morning!, and in case I dont see you, good afternoon, good evening and good night!"
     }
 }
 
-let p4 = new Person4("David",32);
+let p4 = new Person4("David", 32);
 
-class Student{
-    constructor(name,age,salute,major){
+class Student {
+    constructor(name, age, salute, major) {
         this.name = name;
         this.age = age;
         this.salute = salute;
@@ -131,21 +136,21 @@ class Student{
     }
 }
 
-let s = new Student(p4.name,p4.age,p4.salute,"CSE");
+let s = new Student(p4.name, p4.age, p4.salute, "CSE");
 
-class Professor{
-    constructor(name,age,salute,department){
+class Professor {
+    constructor(name, age, salute, department) {
         this.name = name;
         this.age = age;
         this.salute = salute;
         this.department = department;
     }
     greeting() {
-        return "Good day, my name is "+this.name+" and I am in the "+this.department+" department";
+        return "Good day, my name is " + this.name + " and I am in the " + this.department + " department";
     }
 }
 
-let pro = new Professor(p4.name,p4.age,p4.salute,"CSE");
+let pro = new Professor(p4.name, p4.age, p4.salute, "CSE");
 
 
 console.log(p4.greeting());
