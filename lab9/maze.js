@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    "use strict"
     let gamestart = false;
 
     $(".boundary").mouseover(function () {
@@ -12,6 +13,7 @@ $(document).ready(function () {
     $("#start").click(function () {
         gamestart = true;
         $(".boundary").removeClass("youlose");
+        $("#status").text("Game started....");
     });
 
     $("#end").mouseover(function () {
