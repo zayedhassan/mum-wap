@@ -3,28 +3,50 @@ $(document).ready(function () {
     let amount = 10;
     let rate = 250;
     let growing = setInterval(sizeUp, rate);
-
+    let randomColor = '#' + ('000000' + Math.floor(Math.random() * 16777215).toString(16)).slice(-6);
+    $(".circle").css({
+        'background-color': randomColor
+    });
     $(document).on('click', ".circle", function () {
-        $(".circle").hide();
-        $(".circle").not(':first').remove();
-        clearInterval(growing);
+        $(this).hide();
+        randomColor = '#' + ('000000' + Math.floor(Math.random() * 16777215).toString(16)).slice(-6);
+        $(this).css({
+            'background-color': randomColor
+        });
+    });
+
+    $(document).on('mouseover', ".circle", function () {
+        $(this).css({
+            opacity: 0.7
+        });
+    });
+
+    $(document).on('mouseleave', ".circle", function () {
+        $(this).css({
+            opacity: 1
+        });
     });
 
     $("#start").click(function () {
         clearInterval(growing);
         $(".circle").not(':first').remove();
+        randomColor = '#' + ('000000' + Math.floor(Math.random() * 16777215).toString(16)).slice(-6);
+        $(".circle").css({
+            'background-color': randomColor
+        });
         let width = $("#width").val();
         amount = $("#amount").val();
         rate = $("#rate").val();
         for (let i = 1; i < parseInt($("#circleNo").val()); i++) {
-            $(".circle:first").clone().appendTo('article');
-            console.log("okl");
+            randomColor = '#' + ('000000' + Math.floor(Math.random() * 16777215).toString(16)).slice(-6);
+            $(".circle:first").clone().css({
+                'background-color': randomColor
+            }).appendTo('article');
         }
         $(".circle").show();
         $(".circle").css({
             'width': width,
             'height': width,
-            'border-radius': width,
         });
         growing = setInterval(sizeUp, parseInt(rate));
     });
@@ -34,7 +56,6 @@ $(document).ready(function () {
         $(".circle").css({
             'width': newWidth,
             'height': newWidth,
-            'border-radius': newWidth,
         });
     }
 });
